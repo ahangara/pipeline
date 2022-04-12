@@ -4,16 +4,16 @@ on: push             # adding a trigger
 
 jobs:                # we need 2 jobs, 'test' and 'build'
   test:              # id for the first job
-    runs-on: ubuntu-latest        # specify the runner
+    runs-on: windows-latest        # specify the runner
     steps:                        # we need to checkout repository and run the script 
       - uses: actions/checkout@v2  # checkout and freeze that at ver. 2
       - run: python hello.py       # the command to run
   build:
     needs:  [test]                # dependency: 'build' job is dependent on 'test' job
-    runs-on:  ubuntu-latest
+    runs-on:  windows-latest
     steps:
       - uses: actions/upload-artifact@v2  # upload atrifact and freeze at ver. 2
       - uses: actions/checkout@v2
         with:                       # specify parameters to upload artifacts using 'with' keyword
           name: hello-artifact      # name of the artifact
-          path: ${{ github.workspace }}         # create artifact from the current dir
+          path: .                   # create artifact from the current dir
