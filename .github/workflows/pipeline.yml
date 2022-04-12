@@ -16,4 +16,4 @@ jobs:                # we need 2 jobs, 'test' and 'build'
       - uses: actions/checkout@v2
         with:                       # specify parameters to upload artifacts using 'with' keyword
           name: hello-artifact      # name of the artifact
-          path: .                   # create artifact from the current dir
+          path: ./                  # create artifact from the current dir
