@@ -15,5 +15,5 @@ jobs:                # we need 2 jobs, 'test' and 'build'
       - uses: actions/upload-artifact@v2  # upload atrifact and freeze at ver. 2
       - uses: actions/checkout@v2
         with:                       # specify parameters to upload artifacts using 'with' keyword
-          name: hello-artifact      # name of the artifact
-          path: ./                  # create artifact from the current dir
+          name: hello               # name of the artifact
+          path: .                   # create artifact from the current dir
